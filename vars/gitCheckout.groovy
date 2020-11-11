@@ -5,7 +5,7 @@ def call(Map stageParams) {
         $class: 'GitSCM',
         branches: [[name:  stageParams.branch ]],
         userRemoteConfigs: [[ url: stageParams.url ]],
-        changelog: [[ stageParams.changelog ]],
-        poll: [[ stageParams.poll ]]
+        changelog: stageParams.changelog,
+        poll: stageParams.poll
     ])
   }
